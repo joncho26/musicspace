@@ -1,9 +1,11 @@
+<% if current_user %>
 
 <form action="/following/new" method="POST">
   <input type="hidden" name="following[user_id]" value="<%= current_user.id%>">
   <input type="hidden" name="following[artist_id]" value="<%= @artist.id %>">
   <input type="submit" value="Follow <%= @artist.name %>">
 </form>
+<% end %>
 <div class="artist-name-header">
   <h1><%= @artist.name %></h1>
   <a class="artist-upvote-arrow" href="/upvote/<%=@artist.id%>" data-artist="<%= @artist.id %>">↑</a>
