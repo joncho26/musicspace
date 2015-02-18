@@ -15,7 +15,7 @@
 
   <ol>
     <% @user.followed_artists.each do |artist|%>
-      <li><%= artist.name %></li>
+      <li><a href="/artist/<%= artist.id %>"><%= artist.name %></a></li>
     <% end %>
   </ol>
 </div>

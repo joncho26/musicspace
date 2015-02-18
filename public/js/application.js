@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  $('#edit-toggle').on("click",function(){
+    $('.edit-form').toggleClass('hide');
+  })
+
+
+
+
+
+
+
+
+
+
+
   // 'get' ajax
   $('.artist-upvote-arrow').on("click",function(event){
     event.preventDefault();
