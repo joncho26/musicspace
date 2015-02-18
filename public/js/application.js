@@ -5,14 +5,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
   // 'get' ajax
   $('.artist-upvote-arrow').on("click",function(event){
     event.preventDefault();
