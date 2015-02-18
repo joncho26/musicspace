@@ -18,7 +18,8 @@ end
 
 
 delete '/comment/:id' do
-  comment = Comment.find(params[:id])
-  comment.destroy
+  if request.xhr?
+    comment = Comment.find(params[:id]).destroy
+  end
   redirect "/artist/#{comment.artist.id}"
 end

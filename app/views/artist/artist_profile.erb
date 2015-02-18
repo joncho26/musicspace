@@ -40,7 +40,7 @@
 
 
 <!-- Delete comment -->
-  <form action="/comment/<%= comment.id %>" method="POST">
+  <form class="delete-comment-form" action="/comment/<%= comment.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete">
   </form>
