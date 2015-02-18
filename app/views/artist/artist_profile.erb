@@ -1,7 +1,9 @@
 <div class="artist-name-header">
   <h1><%= @artist.name %></h1>
-  <a class="upvote-arrow" href="/upvote/<%=@artist.id%>" data-artist="<%=@artist.id%>"><img class="like" src="/img/like.png"></a>
-  <span class="upvote-num"><%=@artist.total_votes %></span> People like <%=@artist.name%>
+  <a class="artist-upvote-arrow" href="/upvote/<%=@artist.id%>" data-artist="<%= @artist.id %>">↑</a>
+
+  <span class="upvote-num"><%= @artist.total_votes %></span> People like <%=@artist.name%>
+
 </div>
 
 
