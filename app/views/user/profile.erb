@@ -1,0 +1,22 @@
+<h1><%=@user.name%>'s Profile</h1>
+
+<% if current_user.id == @user.id %>
+<%= erb :'user/delete' %>
+<% end %>
+
+<div class="all-artists-link">
+Browse All Artists
+</div>
+
+
+
+<div class="followed-artists-list">
+<%= @user.name %> is currently following:
+
+  <ol>
+    <% @user.followed_artists.each do |artist|%>
+      <li><%= artist.name %></li>
+    <% end %>
+  </ol>
+</div>
+

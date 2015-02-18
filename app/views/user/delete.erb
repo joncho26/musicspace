@@ -1,0 +1,6 @@
+<div class="delete-account">
+  <form action="/user/<%= @user.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Account">
+  </form>
+</div>
