@@ -9,7 +9,39 @@
   <p><%= @artist.bio %></p>
 </div>
 
+
+<h4>Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
+<h4>Comments and Feedback</h4>
+
+<ol>
+<%@artist.comments.each do |comment| %>
+  <li><%= comment.content %> | <a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a></li>
+  <% if current_user.id == comment.user.id %>
+
+  <!-- edit comment -->
+  <form action="/comment/<%= comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="comment[content]" value="<%= comment.content %>">
+    <input type="submit">
+  </form>
+
+
+<!-- Delete comment -->
+  <form action="/comment/<%= comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+  </form>
+  <br>
+  <% end %>
+<% end %>
+</ol>
+
+
+
 <% if current_user %>
+
+<%= erb :'comment_box' %>
+
 <a href="/artist/<%=@artist.id%>/edit">Information not correct? Click here to edit this artist.</a>
 
 <form action="/artist/<%= @artist.id %>" method="POST">
