@@ -39,7 +39,7 @@ $(document).ready(function() {
     }
   })
  })
-
+// ajax deleting a comment
  $('.comment-area').on("submit",'.delete-comment-form',function(event){
   event.preventDefault();
   var $target = $(event.target);
