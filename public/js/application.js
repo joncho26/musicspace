@@ -39,4 +39,21 @@ $(document).ready(function() {
     }
   })
  })
+// ajax deleting a comment
+ $('.comment-area').on("submit",'.delete-comment-form',function(event){
+  event.preventDefault();
+  var $target = $(event.target);
+
+  $.ajax({
+    url: $target.attr("action"),
+    type: "DELETE",
+    success: function(response){
+      // console.log(response);
+      $target.parent().remove();
+    },
+    error: function(response){
+      console.log(response);
+    }
+  })
+ })
 });
