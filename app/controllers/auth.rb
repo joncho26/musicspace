@@ -13,6 +13,7 @@ post '/login' do
     session[:user_id] = user.id
     redirect "/"
   else
+    session[:error] ="Invalid Username or Password."
     redirect "/login"
   end
 end
