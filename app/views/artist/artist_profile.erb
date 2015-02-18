@@ -1,0 +1,19 @@
+<div class="artist-name-header">
+  <h1><%= @artist.name %></h1>
+</div>
+
+
+<img class="artist-photo" src="<%= @artist.pic_url %>">
+<div class="artist-bio">
+  <h2>Bio</h2>
+  <p><%= @artist.bio %></p>
+</div>
+
+<% if current_user %>
+<a href="/artist/<%=@artist.id%>/edit">Information not correct? Click here to edit this artist.</a>
+
+<form action="/artist/<%= @artist.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete <%=@artist.name%>">
+</form>
+<% end %>
