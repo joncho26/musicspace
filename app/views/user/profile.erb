@@ -1,6 +1,10 @@
 <h1><%=@user.name%>'s Profile</h1>
+
 <div class="delete-account">
-Delete Account
+  <form action="/user/<%= @user.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Account">
+  </form>
 </div>
 
 <div class="all-artists-link">
