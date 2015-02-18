@@ -1,7 +1,7 @@
 require_relative "../spec_helper.rb"
 
 
-describe "Index page" do
+describe "Auth spec" do
   let(:user){User.create(name:"Austin Powers", password:"test")}
 
   before do
