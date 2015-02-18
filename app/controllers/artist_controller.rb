@@ -17,7 +17,7 @@ post '/artist/new' do
   redirect "/artist/#{artist.id}"
 end
 
-
+# edit artist
 get '/artist/:id/edit' do
   @artist = Artist.find(params[:id])
   erb :'artist/edit'
@@ -27,6 +27,11 @@ put '/artist/:id' do
   artist = Artist.find(params[:id])
   artist.update(params[:artist])
   redirect "/artist/#{artist.id}"
+end
+
+delete '/artist/:id' do
+  Artist.find(params[:id]).destroy
+  redirect "/artist/all"
 end
 
 

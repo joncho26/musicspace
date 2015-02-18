@@ -10,3 +10,8 @@
 </div>
 
 <a href="/artist/<%=@artist.id%>/edit">Information not correct? Click here to edit this artist.</a>
+
+<form action="/artist/<%= @artist.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete <%=@artist.name%>">
+</form>
