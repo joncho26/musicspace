@@ -6,3 +6,12 @@ post '/comment/new' do
     redirect "/artist/#{comment.artist_id}"
   end
 end
+
+
+put '/comment/:id' do
+  comment = Comment.find(params[:id])
+  comment.update_attributes(params[:comment])
+  redirect "/artist/#{comment.artist.id}"
+end
+
+

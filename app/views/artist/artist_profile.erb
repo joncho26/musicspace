@@ -16,6 +16,14 @@
 <ol>
 <%@artist.comments.each do |comment| %>
   <li><%= comment.content %> | <a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a></li>
+  <% if current_user.id == comment.user.id %>
+  <form action="/comment/<%= comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="comment[content]" value="<%= comment.content %>">
+    <input type="submit">
+  </form>
+  <br>
+  <% end %>
 <% end %>
 </ol>
 
