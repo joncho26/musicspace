@@ -12,5 +12,11 @@ Browse All Artists
 
 <div class="followed-artists-list">
 <%= @user.name %> is currently following:
+
+  <ol>
+    <% @user.followed_artists.each do |artist|%>
+      <li><%= artist.name %></li>
+    <% end %>
+  </ol>
 </div>
 
