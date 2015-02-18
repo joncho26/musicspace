@@ -9,7 +9,22 @@
   <p><%= @artist.bio %></p>
 </div>
 
+
+<h4>Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
+<h4>Comments and Feedback</h4>
+
+<ol>
+<%@artist.comments.each do |comment| %>
+  <li><%= comment.content %> | <a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a></li>
+<% end %>
+</ol>
+
+
+
 <% if current_user %>
+
+<%= erb :'comment_box' %>
+
 <a href="/artist/<%=@artist.id%>/edit">Information not correct? Click here to edit this artist.</a>
 
 <form action="/artist/<%= @artist.id %>" method="POST">
