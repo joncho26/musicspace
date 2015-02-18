@@ -40,7 +40,7 @@ $(document).ready(function() {
   })
  })
 
- $('.delete-comment-form').on("submit",function(event){
+ $('.comment-area').on("submit",'.delete-comment-form',function(event){
   event.preventDefault();
   var $target = $(event.target);
 
