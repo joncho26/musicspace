@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
   has_many :followings
   has_many :followed_artists, through: :followings, source: :artist
 
-
+  def is_following?(artist)
+    self.followed_artists.include?(artist)
+  end
 end

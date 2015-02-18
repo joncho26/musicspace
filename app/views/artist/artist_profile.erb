@@ -1,10 +1,16 @@
 <% if current_user %>
 
-<form action="/following/new" method="POST">
-  <input type="hidden" name="following[user_id]" value="<%= current_user.id%>">
-  <input type="hidden" name="following[artist_id]" value="<%= @artist.id %>">
-  <input type="submit" value="Follow <%= @artist.name %>">
-</form>
+  <% if current_user.is_following?(@artist) %>
+    <form action="/following/<%=@artist.id%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Unfollow <%= @artist.name %>">
+  <% else %>
+    <form action="/following/new" method="POST">
+      <input type="hidden" name="following[user_id]" value="<%= current_user.id%>">
+      <input type="hidden" name="following[artist_id]" value="<%= @artist.id %>">
+      <input type="submit" value="Follow <%= @artist.name %>">
+    </form>
+  <% end %>
 <% end %>
 <div class="artist-name-header">
   <h1><%= @artist.name %></h1>
