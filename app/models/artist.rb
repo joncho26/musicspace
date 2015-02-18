@@ -7,4 +7,5 @@ class Artist < ActiveRecord::Base
   def total_votes
     self.upvotes.length
   end
+
 end
