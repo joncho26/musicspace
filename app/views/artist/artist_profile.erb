@@ -17,9 +17,18 @@
 <h4>Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
 <h4>Comments and Feedback</h4>
 
-<ol>
+<!-- commentbox -->
+<% if current_user %>
+  <%= erb :'comment_box' %>
+<% end %>
+
+<div>
+<ol class="comment-area">
 <%@artist.comments.each do |comment| %>
-  <li><%= comment.content %> | <a href="/user/<%= comment.user.id %>"><%= comment.user.name %></a></li>
+  <%= erb :'_comment_show', locals:{comment:comment} %>
+</div>
+
+
   <% if current_user.id == comment.user.id %>
 
   <!-- edit comment -->
@@ -44,7 +53,7 @@
 
 <% if current_user %>
 
-<%= erb :'comment_box' %>
+
 
 <a href="/artist/<%=@artist.id%>/edit">Information not correct? Click here to edit this artist.</a>
 

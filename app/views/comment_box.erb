@@ -1,4 +1,4 @@
-<form action="/comment/new" method="POST">
+<form class="comment-box" action="/comment/new" method="POST">
   <textarea cols="40" rows="4" name="comment[content]"></textarea>
   <input type="hidden" name="comment[artist_id]" value="<%= @artist.id %>">
   <input type="submit">
