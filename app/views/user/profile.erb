@@ -1,4 +1,4 @@
-<h1><%=@user.name%>'s Profile</h1>
+<h1 class="username-profile-header"><%=@user.name%>'s Profile</h1>
 
 <% if current_user.id == @user.id %>
 <%= erb :'user/delete' %>

@@ -1,42 +1,55 @@
 <% if current_user %>
 
   <% if current_user.is_following?(@artist) %>
-    <form action="/following/<%=@artist.id%>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Unfollow <%= @artist.name %>">
+    <div class="unfollow-button">
+      <form action="/following/<%=@artist.id%>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Unfollow <%= @artist.name %>">
+      </form>
   <% else %>
+  <div class="follow-button">
     <form action="/following/new" method="POST">
       <input type="hidden" name="following[user_id]" value="<%= current_user.id%>">
       <input type="hidden" name="following[artist_id]" value="<%= @artist.id %>">
       <input type="submit" value="Follow <%= @artist.name %>">
     </form>
+  </div>
   <% end %>
 <% end %>
 <div class="artist-name-header">
   <h1><%= @artist.name %></h1>
+</div>
+
+<div class="artist-content">
   <a class="artist-upvote-arrow" href="/upvote/<%=@artist.id%>" data-artist="<%= @artist.id %>">↑</a>
 
   <span class="upvote-num"><%= @artist.total_votes %></span> People like <%=@artist.name%>
-
 </div>
 
+<div class="artist-photo">
+  <img src="<%= @artist.pic_url %>">
+</div>
 
-<img class="artist-photo" src="<%= @artist.pic_url %>">
 <div class="artist-bio">
   <h2>Bio</h2>
   <p><%= @artist.bio %></p>
 </div>
 
 
-<h4>Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
-<h4>Comments and Feedback</h4>
+<h4 class="feedback-section">Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
+
+
+
+<h4 class="comment-section">Comments and Feedback</h4>
 
 <!-- commentbox -->
-<% if current_user %>
-  <%= erb :'comment_box' %>
-<% end %>
+<div class="comment-textbox">
+  <% if current_user %>
+    <%= erb :'comment_box' %>
+  <% end %>
+</div>
 
-<div>
+<div class="comment-area">
 <ol class="comment-area">
 <%@artist.comments.each do |comment| %>
   <%= erb :'_comment_show', locals:{comment:comment} %>

@@ -1,15 +1,18 @@
-<form action="/signup" method="POST">
-  <div>
-    <input type="text" name="user[name]" placeholder="Enter a username">
-  </div>
+<h1 id="sign-up-header">Sign up</h1>
+<div id="sign-up-form">
+  <form action="/signup" method="POST">
+    <div>
+      <input type="text" name="user[name]" placeholder="Enter a username">
+    </div>
 
-  <div>
-    <input type="password" name="user[password]" placeholder="Enter password">
-  </div>
+    <div>
+      <input type="password" name="user[password]" placeholder="Enter password">
+    </div>
 
-  <div>
-    <input type="password" name="user[password_confirmation]" placeholder="Confirm password">
-  </div>
-  <input type="submit" value="Sign up!">
+    <div>
+      <input type="password" name="user[password_confirmation]" placeholder="Confirm password">
+    </div>
+    <input type="submit" value="Sign up!">
 
-</form>
+  </form>
+</div>

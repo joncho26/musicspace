@@ -1,17 +1,24 @@
 
+<div id="error">
 <% if session[:error] %>
 <%= session[:error] %>
 <% session[:error] = nil %>
 <% end %>
+</div>
 
+<div id="login-form">
 <form action="/login" method="POST">
-  <div>
+  <div class="username-input">
     Username<input type="text" name="user[name]">
   </div>
 
-  <div>
+  <div class="password-input">
     Password<input type="password" name="user[password]">
   </div>
-  <input type="Submit" value="Login">
+
+  <div class="login-submit">
+    <input type="Submit" value="Login">
+  </div>
 
 </form>
+</div>
