@@ -198,6 +198,11 @@ div.comment-area {
   right:-20px;
 }
 
+.submit-new-artist-button {
+  position:relative;
+  left:845px;
+  font-size:30px;
+}
 
 
 .like {
