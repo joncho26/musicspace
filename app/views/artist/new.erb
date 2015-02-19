@@ -1,15 +1,17 @@
-<h1>Submit a new Artist</h1>
+<h1 class="submit-new-artist-header">Submit a new Artist</h1>
+
+
 <form action="/artist/new" method="POST">
-  <div>
+  <div class="artist-name-input">
     Artist name<input type="text" name="artist[name]">
   </div>
 
-  <div>
+  <div class="artist-pic-input">
     Artist pic(url)<input type="text" name="artist[pic_url]">
   </div>
 
-  <div>
-    Artist bio<textarea cols="40" rows="4"name="artist[bio]"></textarea>
+  <div class="artist-bio-input">
+    Artist bio<textarea cols="20" rows="4"name="artist[bio]"></textarea>
   </div>
 
   <input type="submit" value="Submit Artist">

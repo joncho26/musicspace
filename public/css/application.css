@@ -157,9 +157,46 @@ div.comment-area {
   bottom:-40px;
 }
 
+.all-artists-section {
+  text-align: center;
+}
+
+.all-artists-header {
+  text-align: center;
+  font-size:70px;
+}
+
+.submit-new-artist {
+  text-align: center;
+  padding-top:50px;
+}
+
+.submit-new-artist-header {
+  text-align: center;
+  font-size: 50px;
+}
 
 
+.artist-name-input {
+  text-align: center;
+  font-size: 40px;
+}
 
+.artist-pic-input {
+  text-align: center;
+  font-size: 40px;
+  position:relative;
+  right:13px;
+  padding-top:5px;
+}
+
+.artist-bio-input {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 10px;
+  position: relative;
+  right:-20px;
+}
 
 
 
