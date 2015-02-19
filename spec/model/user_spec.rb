@@ -18,8 +18,5 @@ describe "User Model" do
     expect(remy.comments.length).to eq(1)
   end
 
-  it 'should respond to #is_following?' do
-    remy.followed_artists.create(artist:nas)
-    expect(remy.followed_artists).to include("Nasir Jones")
-  end
+
 end
