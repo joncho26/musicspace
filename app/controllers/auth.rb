@@ -1,9 +1,9 @@
 get '/' do
-  erb :welcome, layout:false
+  erb :welcome
 end
 
 get '/login' do
-  erb :'auth/login', layout:false
+  erb :'auth/login'
 end
 
 post '/login' do
