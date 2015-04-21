@@ -1,4 +1,7 @@
 /* CSS declarations go here */
+html {
+  background-color: #7FFFD4;
+}
 
 body {
   background-color: #7FFFD4;
@@ -45,9 +48,7 @@ body {
 }
 
 .username-input {
-  padding-bottom: 20px;
-  position:relative;
-  right:3px;
+
 }
 
 
@@ -212,5 +213,9 @@ div.comment-area {
 
 .hide {
   display:none;
+}
+
+#content {
+  background-color: #7FFFD4;
 }
 
