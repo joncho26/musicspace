@@ -1,18 +1,22 @@
-<h1 id="sign-up-header">Sign up</h1>
-<div id="sign-up-form">
-  <form action="/signup" method="POST">
-    <div>
-      <input type="text" class="field-light" name="user[name]" placeholder="Enter a username">
-    </div>
+<body class="bg-black">
+  <div class="p4 bg-cover bg-black">
+    <h1 id="sign-up-header" class="center">Sign up</h1>
+      <div id="sign-up-form" class="center py4">
+        <form action="/signup" method="POST">
+          <div>
+            <input type="text" class="field-light" name="user[name]" placeholder="Enter a username">
+          </div>
 
-    <div>
-      <input type="password" class="field-light" name="user[password]" placeholder="Enter password">
-    </div>
+          <div>
+            <input type="password" class="field-light" name="user[password]" placeholder="Enter password">
+          </div>
 
-    <div>
-      <input type="password" class="field-light" name="user[password_confirmation]" placeholder="Confirm password">
-    </div>
-    <input type="submit" value="Sign up!">
+          <div>
+            <input type="password" class="field-light" name="user[password_confirmation]" placeholder="Confirm password">
+          </div>
+          <input type="submit" value="Sign up!" class="black">
 
-  </form>
-</div>
+        </form>
+      </div>
+  </div>
+</body>
