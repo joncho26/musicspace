@@ -11,9 +11,9 @@
   <div class="followed-artists-list">
   <%= @user.name %> is currently following:
 
-    <ol>
+    <ol class="center">
       <% @user.followed_artists.each do |artist|%>
-        <li><a href="/artist/<%= artist.id %>"><%= artist.name %></a></li>
+        <li><a class="white" href="/artist/<%= artist.id %>"><%= artist.name %></a></li>
       <% end %>
     </ol>
   </div>
