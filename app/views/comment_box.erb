@@ -1,5 +1,6 @@
 <form class="comment-box" action="/comment/new" method="POST">
-  <textarea cols="40" rows="4" name="comment[content]"></textarea>
+  <textarea cols="40" rows="4" name="comment[content]" placeholder="Let's be nice and civilized people by leaving actionable, specific, and kind feedback."></textarea>
   <input type="hidden" name="comment[artist_id]" value="<%= @artist.id %>">
+  <br>
   <input class="submit-button" type="submit">
 </form>

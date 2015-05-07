@@ -1,13 +1,18 @@
+<body class="bg-black">
+
+<div class="artist-name-header">
+  <h1 class="white center"><%= @artist.name %></h1>
+</div>
 <% if current_user %>
 
   <% if current_user.is_following?(@artist) %>
-    <div class="unfollow-button">
+    <div class="unfollow-button center">
       <form action="/following/<%=@artist.id%>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Unfollow <%= @artist.name %>">
       </form>
   <% else %>
-  <div class="follow-button">
+  <div class="follow-button center field-light">
     <form action="/following/new" method="POST">
       <input type="hidden" name="following[user_id]" value="<%= current_user.id%>">
       <input type="hidden" name="following[artist_id]" value="<%= @artist.id %>">
@@ -16,34 +21,31 @@
   </div>
   <% end %>
 <% end %>
-<div class="artist-name-header">
-  <h1><%= @artist.name %></h1>
+
+<div class="artist-content center py3">
+  <a class="artist-upvote-arrow aqua" href="/upvote/<%=@artist.id%>" data-artist="<%= @artist.id %>">↑</a>
+
+  <span class="upvote-num aqua"><%= @artist.total_votes %></span> <span class="aqua">People like <%=@artist.name%></span>
 </div>
 
-<div class="artist-content">
-  <a class="artist-upvote-arrow" href="/upvote/<%=@artist.id%>" data-artist="<%= @artist.id %>">↑</a>
-
-  <span class="upvote-num"><%= @artist.total_votes %></span> People like <%=@artist.name%>
-</div>
-
-<div class="artist-photo">
+<div class="artist-photo center">
   <img src="<%= @artist.pic_url %>">
 </div>
 
-<div class="artist-bio">
-  <h2>Bio</h2>
+<div id="artist-bio">
+  <h2 class="white center">Bio</h2>
   <p><%= @artist.bio %></p>
 </div>
 
 
-<h4 class="feedback-section">Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
+<h4 id="feedback-section" class="white center">Did you enjoy listening to <%=@artist.name%>? Leave some feedback below.</h4>
 
 
 
-<h4 class="comment-section">Comments and Feedback</h4>
+<h4 id="comment-section" class="white center py2">Comments and Feedback</h4>
 
 <!-- commentbox -->
-<div class="comment-textbox">
+<div id="comment-textbox" class="center">
   <% if current_user %>
     <%= erb :'comment_box' %>
   <% end %>
@@ -92,3 +94,4 @@
   <input type="submit" value="Delete <%=@artist.name%>">
 </form>
 <% end %>
+</body>
