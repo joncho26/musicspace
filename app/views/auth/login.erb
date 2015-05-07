@@ -1,24 +1,26 @@
-<h1 class="center">Login</h1>
-<div id="error">
-<% if session[:error] %>
-<%= session[:error] %>
-<% session[:error] = nil %>
-<% end %>
-</div>
+<body class="bg-black">
+  <h1 class="center white py4">Login</h1>
+    <div id="error">
+    <% if session[:error] %>
+    <%= session[:error] %>
+    <% session[:error] = nil %>
+    <% end %>
+    </div>
 
-<div id="login-form">
-<form action="/login" method="POST">
-  <div class="username-input">
-    <input type="text" class="field-light" name="user[name]" placeholder="Username">
+  <div id="login-form" class="center">
+    <form action="/login" method="POST">
+      <div class="username-input py1">
+        <input type="text" class="field-light" name="user[name]" placeholder="Username">
+      </div>
+
+      <div class="password-input">
+        <input type="password" class="field-light" name="user[password]" placeholder="Password">
+      </div>
+
+      <div class="login-submit">
+        <input type="Submit" value="Login">
+      </div>
+
+    </form>
   </div>
-
-  <div class="password-input">
-    <input type="password" class="field-light" name="user[password]" placeholder="Password">
-  </div>
-
-  <div class="login-submit">
-    <input type="Submit" value="Login">
-  </div>
-
-</form>
-</div>
+</body>

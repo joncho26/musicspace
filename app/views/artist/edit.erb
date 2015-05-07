@@ -1,8 +1,19 @@
-<form action="/artist/<%= @artist.id %>" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <input type="text" name="artist[name]" value="<%= @artist.name %>">
-  <input type="text" name="artist[pic_url]" value="<%= @artist.pic_url %>">
-  <input type="text" name="artist[bio]" value="<%= @artist.bio %>">
-  <input type="submit" value="Edit Artist">
+<body class="bg-black">
+  <h1 id="edit-artist-info-header" class="white center">Edit Artist Info</h1>
+  <form class="col-2 px2 mx-auto py3" action="/artist/<%= @artist.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="text" name="artist[name]" value="<%= @artist.name %>">
 
-</form>
+
+
+      <input type="text" name="artist[pic_url]" value="<%= @artist.pic_url %>">
+
+
+
+      <input type="text" name="artist[bio]" value="<%= @artist.bio %>">
+
+
+    <input type="submit" value="Edit Artist">
+
+  </form>
+</body>
