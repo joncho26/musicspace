@@ -14,6 +14,7 @@
   <!-- Load Vollkorn font -->
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/basscss.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -24,13 +25,17 @@
 <body>
 <div id="content">
   <header>
-    <!-- <a href="/"><img src="/img/zenchinese.png" class="logo"></a> -->
     <div id="login-toolbar">
       <% if current_user %>
-        <a class="logout" href="/logout">Logout</a><br>
-        <div class="username-link">
-          <a href="/user/<%=current_user.id%>"><%= current_user.name %></a>
+      <nav class="clearfix white bg-black">
+        <div class="sm-col">
+          <a href="/logout" class="button py2 button-transparent">Logout</a>
         </div>
+
+        <div class="sm-col-right">
+          <a href="/user/<%=current_user.id%>" class="button py2 button-transparent"><i class="fa fa-home fa-2x"></i></a>
+        </div>
+      </nav>
       <% else %>
         <!-- <a href="/login">Login</a> -->
       <% end %>
