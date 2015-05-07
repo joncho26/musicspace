@@ -19,10 +19,10 @@ andre = Artist.create(name:"Andre 3000", pic_url:"http://www.mixmag.net/sites/de
 jack = Artist.create(name:"Jack Johnson", pic_url:"https://aestheticoctopus.files.wordpress.com/2009/12/jack20johnson.jpg",bio:"Eat banana pancakes for breakfast, lunch, and dinner.")
 
 #comment*******************************
-Comment.create(content:"nice music",user:jonathan, artist:allen)
-Comment.create(content:"sounds good",user:jonathan, artist:andre)
-Comment.create(content:"whoa! blown away", user:jonathan, artist:nas)
-Comment.create(content:"jack, i listen to your music everyday.",user:jonathan, artist:andre)
+# Comment.create(content:"nice music",user:jonathan, artist:allen)
+# Comment.create(content:"sounds good",user:jonathan, artist:andre)
+# Comment.create(content:"whoa! blown away", user:jonathan, artist:nas)
+# Comment.create(content:"jack, i listen to your music everyday.",user:jonathan, artist:andre)
 
 #upvote********************************
 Upvote.create(user:jonathan, artist:andre)
