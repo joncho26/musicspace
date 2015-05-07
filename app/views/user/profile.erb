@@ -1,22 +1,27 @@
-<h1 class="username-profile-header"><%=@user.name%>'s Profile</h1>
+<body class="bg-black">
+  <h1 class="username-profile-header white center"><%=@user.name%>'s Profile</h1>
 
-<% if current_user.id == @user.id %>
-<%= erb :'user/delete' %>
-<% end %>
 
-<div class="all-artists-link">
-<a href="/artist/all">Browse Artists</a>
+  <div class="all-artists-link center">
+  <a class="red" href="/artist/all">Browse Artists</a>
+  </div>
+
+
+
+  <div class="followed-artists-list">
+  <%= @user.name %> is currently following:
+
+    <ol>
+      <% @user.followed_artists.each do |artist|%>
+        <li><a href="/artist/<%= artist.id %>"><%= artist.name %></a></li>
+      <% end %>
+    </ol>
+  </div>
+
+<div id="delete-button">
+  <% if current_user.id == @user.id %>
+  <%= erb :'user/delete' %>
+  <% end %>
 </div>
 
-
-
-<div class="followed-artists-list">
-<%= @user.name %> is currently following:
-
-  <ol>
-    <% @user.followed_artists.each do |artist|%>
-      <li><a href="/artist/<%= artist.id %>"><%= artist.name %></a></li>
-    <% end %>
-  </ol>
-</div>
-
+</body>
